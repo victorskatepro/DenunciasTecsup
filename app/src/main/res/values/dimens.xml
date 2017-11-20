@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_margintop">150dp</dimen>
+    <dimen name="register_margin">150dp</dimen>
+    <dimen name="denunciaitem_titulo">15sp</dimen>
+    <dimen name="denuncia_item_txt">20dp</dimen>
+    <dimen name="espacio_normal">16dp</dimen>
+    <dimen name="espacio_poco">8dp</dimen>
+</resources>

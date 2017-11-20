@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">DenunciasTecsup</string>
+    <string name="login_username">username</string>
+    <string name="login_contrase_a">Contraseña</string>
+    <string name="login_registrar">Registrar</string>
+    <string name="login_ingresar">Ingresar</string>
+    <string name="register_username">username</string>
+    <string name="register_email">email</string>
+    <string name="register_password">passwrod</string>
+    <string name="activity_denuncia_realizada_por">Denuncia realizada por</string>
+    <string name="denuncia_item_por_victor_alejandro">Por: Victor Alejandro</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="perfil_infousuario">Informacion del usuario</string>
+    <string name="perfil_contrasena">Contraseña</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

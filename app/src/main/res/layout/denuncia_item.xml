@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:elevation="10dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp">
+            <ImageView
+                android:id="@+id/imgdenuncia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/bg_denuncia"
+                android:layout_marginRight="10dp"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/txttitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@id/imgdenuncia"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/denunciaitem_titulo"
+                    android:text="@string/activity_denuncia_realizada_por"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/denuncia_item_por_victor_alejandro"
+                    android:layout_marginTop="@dimen/denuncia_item_txt"
+                    android:textSize="@dimen/denunciaitem_titulo"
+                    android:id="@+id/txtauto"
+                    />
+                 <View
+                     android:layout_marginTop="10dp"
+                    android:id="@+id/busDeckSelectionMargin"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip"
+                    android:background="#ffdddddd" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="5"
+                    android:id="@+id/txtdescripcion"
+                    android:text="Descripcion de la denuncia, un niño rata se paso de pendejo y quiso morir"/>
+                <View
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/separadorlugar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip"
+                    android:background="#ffdddddd" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lugar"
+                    android:id="@+id/txtlugar"
+                    android:textSize="@dimen/denunciaitem_titulo"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
