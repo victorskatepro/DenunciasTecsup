@@ -117,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
                 .putString("username", usuarios.getUsername())
                 .putString("correo", usuarios.getCorreo())
                 .putString("photo", usuarios.getImagen())
-                .putInt("idUsuario", usuarios.getId())
+                .putString("idUsuario", Integer.toString(usuarios.getId()))
                 .putBoolean("islogged", true)
                 .commit();
         goMain();

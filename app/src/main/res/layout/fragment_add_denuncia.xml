@@ -1,10 +1,11 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
-              android:orientation="vertical"
              android:layout_height="match_parent"
+                android:padding="16dp"
              tools:context="com.victorsaico.denunciastecsup.fragments.AddDenunciaFragment">
     <TextView
+        android:id="@+id/txttitulo"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,24 +14,66 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ingrese titulo"/>
-
+        android:id="@+id/txtdenunciatitulo"
+        android:hint="Ingresar el titulo de la denuncia"
+        android:layout_below="@id/txttitulo"/>
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/descripcion_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Ingrese Descripción"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="9dp"
         android:inputType="textMultiLine"
-        android:maxLines="6"/>
-    <TextView
+        android:lines="4"
+        android:layout_below="@+id/txtdenunciatitulo"
+        android:hint="Ingrese la descripcion de la denuncia"
+        android:maxLength="500"/>
+    <LinearLayout
+        android:id="@+id/layoutubicacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ubicacion"
-        android:id="@+id/txtAddres"/>
+        android:layout_below="@+id/descripcion_txt"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ubicacion"
+            android:layout_below="@+id/descripcion_txt"
+            android:id="@+id/txtAddres"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_location_on"
+            />
+        <Button
+            android:text="Ubicar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/sweet_dialog_bg_color"
+            android:background="@color/Primary"
+            android:id="@+id/btnubicacion"/>
+    </LinearLayout>
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutubicacion"
+        android:text="Agregar foto"
+        android:background="@color/Primary"
+        android:textColor="@color/sweet_dialog_bg_color"
+        android:id="@+id/btncapturefoto"/>
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:src="@drawable/img_denuncia"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/imgdenuncia"
+        android:layout_below="@+id/btncapturefoto"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ubicacion"
-        android:id="@+id/btnubicacion"/>
-</LinearLayout>
+        android:layout_below="@+id/imgdenuncia"
+        android:id="@+id/btnregistrar"
+        android:text="Registrar Denuncia"
+        android:layout_marginTop="10dp"
+        android:background="@color/primary_dark"/>
+</RelativeLayout>

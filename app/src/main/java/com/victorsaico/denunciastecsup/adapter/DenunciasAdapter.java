@@ -61,11 +61,11 @@ public class DenunciasAdapter extends RecyclerView.Adapter<DenunciasAdapter.View
        Denuncia denuncia = this.denuncias.get(position);
 
        holder.tituloText.setText(denuncia.getTitulo());
-       holder.denunciaText.setText(denuncia.getAutor());
-       holder.ubicacion.setText(denuncia.getDireccion());
+       holder.denunciaText.setText("Autor :"+denuncia.getAutor());
+       holder.ubicacion.setText("Direccion :"+denuncia.getDireccion());
         String url = ApiService.API_BASE_URL + "/images/" + denuncia.getImagen();
         Picasso.with(holder.itemView.getContext()).load(url).into(holder.fotoImage);
-        holder.descripcion.setText(denuncia.getDescripcion());
+        holder.descripcion.setText("Direccion :"+denuncia.getDescripcion());
     }
 
     @Override

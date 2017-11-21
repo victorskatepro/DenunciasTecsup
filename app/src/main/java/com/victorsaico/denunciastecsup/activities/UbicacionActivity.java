@@ -1,17 +1,18 @@
 package com.victorsaico.denunciastecsup.activities;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -21,7 +22,6 @@ import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.victorsaico.denunciastecsup.R;
-import com.victorsaico.denunciastecsup.fragments.AddDenunciaFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,6 +47,8 @@ public class UbicacionActivity extends AppCompatActivity implements GoogleMap.On
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.mapubicacion);
         mapFragment.getMapAsync(this);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
     }
 
     @Override
@@ -101,9 +103,22 @@ public class UbicacionActivity extends AppCompatActivity implements GoogleMap.On
     }
 
     public void registrarubicacion(View view) {
-        Intent intent = new Intent(this, AddDenunciaFragment.class);
-        intent.putExtra("Ubicacion", address);
-        startActivity(intent);
+
+        if(latitud == 0 && longitud == 0){
+            Toast.makeText(getApplicationContext(),"Primero marca la escena del crimen.", Toast.LENGTH_LONG).show();
+        } else {
+            // Save to SharedPreferences
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("latitud", String.valueOf(latitud));
+            editor.putString("longitud", String.valueOf(longitud));
+            editor.putString("address", address);
+            Log.d(TAG, "address: " + address);
+            editor.commit();
+
+            finish();
+
+        }
+
     }
 
     private class GetAddress extends AsyncTask<String,Void,String> {

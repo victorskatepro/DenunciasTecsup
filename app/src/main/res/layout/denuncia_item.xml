@@ -13,8 +13,8 @@
             android:padding="20dp">
             <ImageView
                 android:id="@+id/imgdenuncia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_alignParentLeft="true"
                 android:src="@drawable/bg_denuncia"
                 android:layout_marginRight="10dp"/>
