@@ -167,7 +167,9 @@ public class AddDenunciaFragment extends Fragment {
 
         pDialog.setMessage("Registro en proceso...");
         showDialog();
-        if (mediaFileUri == null) {
+        Bitmap bitmap = BitmapFactory.decodeFile(mediaFileUri.getPath());
+
+        if (mediaFileUri == null || bitmap == null) {
             // Si no se incluye imagen hacemos un envío POST simple
             call = service.createDenuncia(id, titulo, username, descripcion, latitud, longitud, ubicacion);
         }else {
@@ -177,7 +179,6 @@ public class AddDenunciaFragment extends Fragment {
             // Podemos enviar la imagen con el tamaño original, pero lo mejor será comprimila antes de subir (byteArray)
             // RequestBody requestFile = RequestBody.create(MediaType.parse("image/jpeg"), file);
 
-            Bitmap bitmap = BitmapFactory.decodeFile(mediaFileUri.getPath());
 
             // Reducir la imagen a 800px solo si lo supera
             bitmap = scaleBitmapDown(bitmap, 800);
