@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.victorsaico.denunciastecsup.R;
-import com.victorsaico.denunciastecsup.activities.RegistrarDenunciaActivity;
 import com.victorsaico.denunciastecsup.adapter.DenunciasAdapter;
 import com.victorsaico.denunciastecsup.models.Denuncia;
 import com.victorsaico.denunciastecsup.servicies.ApiService;
